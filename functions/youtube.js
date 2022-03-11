@@ -18,10 +18,11 @@ exports.handler = async (event) => {
   const url = new URL(path, GOOGLEAPIS_ORIGIN);
   const parameters = querystring.stringify({
     ...queryStringParameters,
-    key: process.env.API_KEY,
+    key: process.env.YOUTUBE_API_KEY,
   });
 
   url.search = parameters;
+  headers["Access-Control-Allow-Origin"] = "*";
 
   try {
     const response = await fetch(url, { headers: { referer } });

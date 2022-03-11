@@ -3,7 +3,7 @@ const stringify = require("../utils/stringify.js");
 
 exports.handler = async () => {
   const headers = {
-    "Access-Control-Allow-Origin": process.env.HOST,
+    "Access-Control-Allow-Origin": "*",
     Vary: "Origin",
   };
 
